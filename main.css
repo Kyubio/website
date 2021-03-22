@@ -10,3 +10,20 @@ model-viewer
 	margin: auto;
 	--progress-bar-color: rgba(0,0,0,0);
 }
+
+.switch-buttons
+{
+	border: 5px solid #030057;
+	background-color: #030057;
+	border-radius: 10px;
+	color: white;
+	padding: 20px;
+	font-size: 3em;
+}
+
+.buttons
+{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
