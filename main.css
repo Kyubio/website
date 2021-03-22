@@ -1,0 +1,12 @@
+body
+{
+	background-color: #4ec7eb;
+}
+
+model-viewer
+{
+	width: 750px; 
+	height: 750px; 
+	margin: auto;
+	--progress-bar-color: rgba(0,0,0,0);
+}
