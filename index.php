@@ -1,23 +1,103 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>3D moddel</title>
+<html lang="en">
+	<head>
+		<title>three.js webgl - USDZ exporter</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-<link rel="stylesheet" href="main.css">
+		<style>
+			body {
+				background-color: #377CDB;
+			}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script src="script.js"></script>
+		</style>
+	</head>
 
-</head>
-<body>
+	<body>
+		<script type="module">
 
-<model-viewer onfocus="blur()" src="models/kyubio1.glb" id="model" alt="interactive 3D model of Kyubio" auto-rotate disable-zoom camera-controls></model-viewer>
+			import * as THREE from './three/build/three.module.js';
 
-<div class="buttons">
-	<div class="switch-buttons" id="button1">Model 1</div><br>
-	<div class="switch-buttons" id="button2">Model 2</div>
-</div>
+			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+			import { RoomEnvironment } from './three/examples/jsm/environments/RoomEnvironment.js';
 
-</body>
+			import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
+			import { USDZExporter } from './three/examples/jsm/exporters/USDZExporter.js';
+
+			let camera, scene, renderer;
+
+			init();
+			render();
+
+			function init() {
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth/1.008, window.innerHeight/1.018 ); //size of render area
+				renderer.toneMapping = THREE.ACESFilmicToneMapping;
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
+				camera.position.set( - 3, 2, 2 );
+
+				const environment = new RoomEnvironment();
+				const pmremGenerator = new THREE.PMREMGenerator( renderer );
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0x478FF4 ); //background color
+				scene.environment = pmremGenerator.fromScene( environment ).texture;
+
+				const loader = new GLTFLoader().setPath( 'models/kyubio2/' );
+				loader.load( 'kyubio2.glb', async function ( gltf ) {
+					
+					const model = gltf.scene;
+					model.scale.set( 0.25, 0.25, 0.25 ); //size of the cube
+					
+					const animate = function () //animation of the cube
+					{
+						requestAnimationFrame( animate );
+
+						model.rotation.x += 0.001;
+						model.rotation.y += 0.0005;
+
+						renderer.render( scene, camera );
+					};
+
+					animate();
+					scene.add( model );
+
+					render();
+
+				} );
+
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.minDistance = 2;
+				controls.maxDistance = 10;
+				controls.target.set( 0, 0, 0 );
+				controls.update();
+
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth/1.008, window.innerHeight/1.018 );
+
+				render();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+		</script>
+
+	</body>
 </html>
