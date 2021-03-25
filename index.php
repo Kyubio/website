@@ -49,10 +49,14 @@
 				scene.environment = pmremGenerator.fromScene( environment ).texture;
 
 				const loader = new GLTFLoader().setPath( 'models/kyubio2/' );
-				loader.load( 'kyubio2.glb', async function ( gltf ) {
+				loader.load( 'kyubio22.glb', async function ( gltf ) {
 					
+					const axesHelper = new THREE.AxesHelper(10);
+					scene.add(axesHelper);
+
 					const model = gltf.scene;
 					model.scale.set( 0.25, 0.25, 0.25 ); //size of the cube
+					model.setRotationFromQuaternion;
 					
 					const animate = function () //animation of the cube
 					{
@@ -72,9 +76,8 @@
 				} );
 
 				const controls = new OrbitControls( camera, renderer.domElement );
-				controls.minDistance = 2;
-				controls.maxDistance = 10;
-				controls.target.set( 0, 0, 0 );
+				controls.minDistance = 5;
+				controls.maxDistance = 5;
 				controls.update();
 
 				window.addEventListener( 'resize', onWindowResize );
