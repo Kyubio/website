@@ -4,25 +4,8 @@
 		<title>three.js webgl - USDZ exporter</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-		<style>
-			body 
-			{
-				background-color: #478FF4;
-			}
-			.colors
-			{
-				width: 99%;
-				margin: auto;
-				text-align: center;
-			}
-			.colorPicker 
-			{
-				display: inline-block;
-				margin: 0 10px;
-				color: white;
-			}
-		</style>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="main.css">
 	</head>
 
 	<body>
@@ -30,120 +13,58 @@
 			<span class="colorPicker">Main <input id="main-color" type="color" value="#ffffff"></input><br/></span>
 			<span class="colorPicker">Secondary <input id="secondary-color" type="color" value="#000000"></input><br/></span>
 		</div>
+		<div class="builder">
+			<label for="side1">Side 1:</label>
+			<select class="selection" id="side1" name="side1">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select> 
+			<br><br>
+			<label for="side2">Side 2:</label>
+			<select class="selection" id="side2" name="side2">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select> 
+			<br><br>
+			<label for="side3">Side 3:</label>
+			<select class="selection" id="side3" name="side3">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select> 
+			<br><br>
+			<label for="side4">Side 4:</label>
+			<select class="selection" id="side4" name="side4">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select> 
+			<br><br>
+			<label for="side5">Side 5:</label>
+			<select class="selection" id="side5" name="side5">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select> 
+			<br><br>
+			<label for="side6">Side 6:</label>
+			<select class="selection" id="side6" name="side6">
+				<option value="" selected disabled hidden>Choose here</option>
+				<option value="joystick">Joystick</option>
+				<option value="buttons">Buttons</option>
+				<option value="turnables">Disc and Ball</option>
+			</select>
+		</div>
 
-		<div id="container"></div>
-	
-		<script type="module">
-
-			import * as THREE from './three/build/three.module.js';
-			
-			import { GUI } from './three/examples/jsm/libs/dat.gui.module.js';
-			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
-			import { RoomEnvironment } from './three/examples/jsm/environments/RoomEnvironment.js';
-
-			import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
-			import { USDZExporter } from './three/examples/jsm/exporters/USDZExporter.js';
-
-			let camera, scene, renderer;
-
-			init();
-			render();
-
-			function init() {
-
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth/1.008, window.innerHeight/1.018 ); //size of render area
-				renderer.toneMapping = THREE.ACESFilmicToneMapping;
-				renderer.outputEncoding = THREE.sRGBEncoding;
-				document.body.appendChild( renderer.domElement );
-
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
-				camera.position.set( - 3, 2, 2 );
-
-				const environment = new RoomEnvironment();
-				const pmremGenerator = new THREE.PMREMGenerator( renderer );
-
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0x478FF4 ); //background color
-				scene.environment = pmremGenerator.fromScene( environment ).texture;
-
-				//material
-
-				const mainMaterial = new THREE.MeshPhysicalMaterial( {
-					color: 0xffffff, roughness: 0.4
-				} );
-
-				const secondaryMaterial = new THREE.MeshStandardMaterial( {
-					color: 0x000000, roughness: 0.5
-				} );
-
-				const MainInput = document.getElementById( 'main-color' );
-				MainInput.addEventListener( 'input', function () {
-
-					mainMaterial.color.set( this.value );
-
-				} );
-				
-				const SecondaryInput = document.getElementById( 'secondary-color' );
-				SecondaryInput.addEventListener( 'input', function () {
-
-					secondaryMaterial.color.set( this.value );
-
-				} );
-
-				const loader = new GLTFLoader().setPath( 'models/kyubio2/' );
-				loader.load( 'kyubio23.glb', async function ( gltf ) {
-
-					const model = gltf.scene;
-					model.scale.set( 0.25, 0.25, 0.25 ); //size of the cube
-					model.getObjectByName( 'Cube' ).material = mainMaterial;
-					//model.getObjectByName( 'addons' ).material = secondaryMaterial;
-					
-					
-					const animate = function () //animation of the cube
-					{
-						requestAnimationFrame( animate );
-
-						model.rotation.x += 0.001;
-						model.rotation.y += 0.0005;
-
-						renderer.render( scene, camera );
-					};
-
-					animate();
-					scene.add( model );
-
-					render();
-
-				} );
-
-				const controls = new OrbitControls( camera, renderer.domElement );
-				controls.minDistance = 5;
-				controls.maxDistance = 5;
-				controls.update();
-
-				window.addEventListener( 'resize', onWindowResize );
-
-			} //end function init
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth/1.008, window.innerHeight/1.018 );
-
-				render();
-
-			}
-
-			function render() {
-
-				renderer.render( scene, camera );
-
-			}
-		</script>
-
+		<?php
+			require "script.php";
+		?>
 	</body>
 </html>
