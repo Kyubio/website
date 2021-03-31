@@ -1,29 +1,23 @@
-body
+body 
 {
-	background-color: #4ec7eb;
+	background-color: #478FF4;
 }
 
-model-viewer
+.colors
 {
-	width: 750px; 
-	height: 750px; 
+	width: 99%;
 	margin: auto;
-	--progress-bar-color: rgba(0,0,0,0);
+	text-align: center;
 }
 
-.switch-buttons
+.colorPicker 
 {
-	border: 5px solid #030057;
-	background-color: #030057;
-	border-radius: 10px;
+	display: inline-block;
+	margin: 0 10px;
 	color: white;
-	padding: 20px;
-	font-size: 3em;
 }
 
-.buttons
+.builder
 {
 	position: absolute;
-	right: 20px;
-	top: 20px;
 }
