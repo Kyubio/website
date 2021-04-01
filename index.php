@@ -17,49 +17,33 @@
 			<label for="side1">Side 1:</label>
 			<select class="selection" id="side1" name="side1">
 				<option value="" selected disabled hidden>Choose here</option>
-				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
+
 			</select> 
 			<br><br>
 			<label for="side2">Side 2:</label>
 			<select class="selection" id="side2" name="side2">
 				<option value="" selected disabled hidden>Choose here</option>
-				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
 			</select> 
 			<br><br>
 			<label for="side3">Side 3:</label>
 			<select class="selection" id="side3" name="side3">
 				<option value="" selected disabled hidden>Choose here</option>
-				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
 			</select> 
 			<br><br>
 			<label for="side4">Side 4:</label>
 			<select class="selection" id="side4" name="side4">
 				<option value="" selected disabled hidden>Choose here</option>
-				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
 			</select> 
 			<br><br>
 			<label for="side5">Side 5:</label>
 			<select class="selection" id="side5" name="side5">
 				<option value="" selected disabled hidden>Choose here</option>
-				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
 			</select> 
 			<br><br>
 			<label for="side6">Side 6:</label>
 			<select class="selection" id="side6" name="side6">
 				<option value="" selected disabled hidden>Choose here</option>
 				<option value="joystick">Joystick</option>
-				<option value="buttons">Buttons</option>
-				<option value="turnables">Disc and Ball</option>
 			</select>
 		</div>
 

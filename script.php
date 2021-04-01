@@ -30,7 +30,7 @@
 		const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
 		scene = new THREE.Scene();
-		scene.background = new THREE.Color( 0x478FF4 ); //background color
+		scene.background = new THREE.Color( 0x4ec7eb ); //background color
 		scene.environment = pmremGenerator.fromScene( environment ).texture;
 
 		//material
@@ -81,6 +81,17 @@
 			model.getObjectByName( 'buttons' ).visible = false;
 			model.getObjectByName( 'turnables' ).visible = false;
 			
+			//create add ons
+			var options = { "joystick": "joystick", "buttons": "buttons", "turnables": "Disk and Ball" };
+			var values = new Array ()
+			$.each(options, function(key, value) {
+				$('.selection')
+				.append($('<option>', { value : key })
+				.text(value));
+				
+				values.push(key); //create an array with all possible options
+			});
+			
 			//choose add ons
 			document.querySelectorAll('.selection').forEach(item => 
 			{
@@ -88,6 +99,7 @@
 				{
 					var result = item.value;
 					model.getObjectByName(result).visible = true;
+					
 				})
 			})
 
@@ -95,8 +107,8 @@
 			{
 				requestAnimationFrame( animate );
 
-				model.rotation.x += 0.001;
-				model.rotation.y += 0.0005;
+				//model.rotation.x += 0.001;
+				//model.rotation.y += 0.0005;
 
 				renderer.render( scene, camera );
 			};
