@@ -61,8 +61,8 @@
 		} );
 		
 		//cube
-		const loader = new GLTFLoader().setPath( 'models/kyubio2/' );
-		loader.load( 'kyubio2.glb', async function ( gltf ) 
+		const loader = new GLTFLoader().setPath( 'models/kyubio3/' );
+		loader.load( 'kyubio31.glb', async function ( gltf ) 
 		{
 
 			//create cube
@@ -72,34 +72,31 @@
 			//material colors
 			model.getObjectByName( 'Cube' ).material = mainMaterial;
 			
-			model.getObjectByName( 'joystick' ).material = secondaryMaterial;
-			model.getObjectByName( 'buttons' ).material = secondaryMaterial;
-			model.getObjectByName( 'turnables' ).material = secondaryMaterial;
-			
-			//set visibility of addons
-			model.getObjectByName( 'joystick' ).visible = false;
-			model.getObjectByName( 'buttons' ).visible = false;
-			model.getObjectByName( 'turnables' ).visible = false;
-			
-			//create add ons
-			var options = { "joystick": "joystick", "buttons": "buttons", "turnables": "Disk and Ball" };
-			var values = new Array ()
-			$.each(options, function(key, value) {
-				$('.selection')
-				.append($('<option>', { value : key })
-				.text(value));
+			//loop through add ons
+			for( let i = 1 ; i < 7 ; i++)
+			{
+				//set material of add ons
+				model.getObjectByName( 'joystick'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'buttons'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'turnables'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'rubbers'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'scroll-clicker'+i ).material = secondaryMaterial;
 				
-				values.push(key); //create an array with all possible options
-			});
-			
+				//set visibility of add ons
+				model.getObjectByName( 'joystick'+i ).visible = false;
+				model.getObjectByName( 'buttons'+i ).visible = false;
+				model.getObjectByName( 'turnables'+i ).visible = false;
+				model.getObjectByName( 'rubbers'+i ).visible = false;
+				model.getObjectByName( 'scroll-clicker'+i ).visible = false;
+			}
+					
 			//choose add ons
 			document.querySelectorAll('.selection').forEach(item => 
 			{
 				item.addEventListener( 'change', event => 
 				{
 					var result = item.value;
-					model.getObjectByName(result).visible = true;
-					
+					model.getObjectByName(result).visible = true;	
 				})
 			})
 
@@ -107,8 +104,8 @@
 			{
 				requestAnimationFrame( animate );
 
-				//model.rotation.x += 0.001;
-				//model.rotation.y += 0.0005;
+				model.rotation.x += 0.001;
+				model.rotation.y += 0.0005;
 
 				renderer.render( scene, camera );
 			};
