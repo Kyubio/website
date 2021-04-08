@@ -62,7 +62,7 @@
 		
 		//cube
 		const loader = new GLTFLoader().setPath( 'models/kyubio3/' );
-		loader.load( 'kyubio31.glb', async function ( gltf ) 
+		loader.load( 'kyubio3.glb', async function ( gltf ) 
 		{
 
 			//create cube
@@ -97,6 +97,8 @@
 				{
 					var result = item.value;
 					model.getObjectByName(result).visible = true;	
+					
+					
 				})
 			})
 
