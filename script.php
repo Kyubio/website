@@ -97,7 +97,15 @@
 				{
 					var result = item.value;
 					model.getObjectByName(result).visible = true;	
+					var lastNumb = result.slice(-1);
 					
+					model.getObjectByName( 'joystick'+lastNumb ).visible = false;
+					model.getObjectByName( 'buttons'+lastNumb ).visible = false;
+					model.getObjectByName( 'turnables'+lastNumb ).visible = false;
+					model.getObjectByName( 'rubbers'+lastNumb ).visible = false;
+					model.getObjectByName( 'scroll-clicker'+lastNumb ).visible = false;
+					
+					model.getObjectByName(result).visible = true;					
 					
 				})
 			})
@@ -106,8 +114,8 @@
 			{
 				requestAnimationFrame( animate );
 
-				model.rotation.x += 0.001;
-				model.rotation.y += 0.0005;
+				//model.rotation.x += 0.001;
+				//model.rotation.y += 0.0005;
 
 				renderer.render( scene, camera );
 			};
