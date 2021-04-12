@@ -114,8 +114,8 @@
 			{
 				requestAnimationFrame( animate );
 
-				//model.rotation.x += 0.001;
-				//model.rotation.y += 0.0005;
+				model.rotation.x += 0.001;
+				model.rotation.y += 0.0005;
 
 				renderer.render( scene, camera );
 			};
