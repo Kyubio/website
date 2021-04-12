@@ -72,7 +72,6 @@
 				<option value="turnables6">Disk and Ball</option>
 				<option value="rubbers6">Rubber Dots</option>
 				<option value="scroll-clicker6">Switch and Wheel</option>
-				<option value="joystick6">Joystick</option>
 			</select>
 		</div>
 
