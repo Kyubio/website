@@ -1,23 +1,16 @@
 body 
 {
-	background-color: #4ec7eb;
+	
 }
 
-.colors
-{
-	width: 99%;
-	margin: auto;
-	text-align: center;
-}
+
 
 .colorPicker 
 {
-	display: inline-block;
-	margin: 0 10px;
-	color: white;
+	
 }
 
 .builder
 {
-	position: absolute;
+	
 }
