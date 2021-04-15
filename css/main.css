@@ -1,0 +1,98 @@
+/*fonts*/
+@font-face {
+    font-family: 'Montserrat';
+    src: url('http://localhost/Sogeti/css/fonts/Montserrat-Regular.ttf');http://localhost/Sogeti/
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aquire';
+    src: url('http://localhost/Sogeti/css/fonts/AquireBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body
+{
+	margin: 0;
+	background-color: #4ec7eb;
+	font-family: Montserrat;
+	color: white;
+}
+
+h1
+{
+	font-family: Aquire;
+	text-align: center;
+	margin-top: 0;
+}
+
+h3
+{
+	font-family: Aquire;
+	font-size: 130%;
+	text-align: center;
+}
+
+.builder
+{
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	width: 350px;
+	padding: 25px 0;
+	border: 2px solid #43B1D6;
+	background-color: #43B1D6;
+	border-radius: 5px;
+}
+
+.area
+{
+	width:75%;
+	margin: auto;
+}
+
+.colors
+{
+	width: 100%;
+	margin: auto;
+}
+
+.colorSelector
+{
+	display: inline-block;
+	margin: 0 10px;
+	color: white;
+}
+
+
+hr
+{
+	border: 3px solid white;
+	border-radius: 50px;
+	width: 100%;
+	margin: 15px auto;
+}
+
+label
+{
+	color: white;
+	margin-left: 10px;
+}
+
+.select-item
+{
+	margin: 10px 50px 10px 0;
+	
+}
+
+select
+{
+	float: right;
+	border: 1px solid black;
+	border-radius: 5px;
+	outline: none;
+}
+
+

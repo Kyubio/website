@@ -62,7 +62,7 @@
 		
 		//cube
 		const loader = new GLTFLoader().setPath( 'models/kyubio3/' );
-		loader.load( 'kyubio32.glb', async function ( gltf ) 
+		loader.load( 'kyubio3.glb', async function ( gltf ) 
 		{
 
 			//create cube
@@ -77,23 +77,30 @@
 			{
 				//set material of add ons
 
+				model.getObjectByName( 'beads'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'buttons'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'indent'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'joystick'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'lines'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'rough-texture'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'rubbers'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'schuifjes'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'scroll-clicker'+i ).material = secondaryMaterial;
+				model.getObjectByName( 'soft'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'turnables'+i ).material = secondaryMaterial;
 				model.getObjectByName( 'wheels'+i ).material = secondaryMaterial;
 				
+				//set ever add-on to invisible
+				model.getObjectByName( 'beads'+i ).visible = false;
 				model.getObjectByName( 'buttons'+i ).visible = false;
 				model.getObjectByName( 'indent'+i ).visible = false;
 				model.getObjectByName( 'joystick'+i ).visible = false;
 				model.getObjectByName( 'lines'+i ).visible = false;
 				model.getObjectByName( 'rough-texture'+i ).visible = false;
 				model.getObjectByName( 'rubbers'+i ).visible = false;
+				model.getObjectByName( 'schuifjes'+i ).visible = false;
 				model.getObjectByName( 'scroll-clicker'+i ).visible = false;
+				model.getObjectByName( 'soft'+i ).visible = false;
 				model.getObjectByName( 'turnables'+i ).visible = false;
 				model.getObjectByName( 'wheels'+i ).visible = false;
 			}
@@ -107,13 +114,16 @@
 					var lastNumb = result.slice(-1);
 					
 					model.getObjectByName( lastNumb ).visible = false;
+					model.getObjectByName( 'beads'+lastNumb ).visible = false;
 					model.getObjectByName( 'buttons'+lastNumb ).visible = false;
 					model.getObjectByName( 'indent'+lastNumb ).visible = false;
 					model.getObjectByName( 'joystick'+lastNumb ).visible = false;
 					model.getObjectByName( 'lines'+lastNumb ).visible = false;
 					model.getObjectByName( 'rough-texture'+lastNumb ).visible = false;
 					model.getObjectByName( 'rubbers'+lastNumb ).visible = false;
+					model.getObjectByName( 'schuifjes'+lastNumb ).visible = false;
 					model.getObjectByName( 'scroll-clicker'+lastNumb ).visible = false;
+					model.getObjectByName( 'soft'+lastNumb ).visible = false;
 					model.getObjectByName( 'turnables'+lastNumb ).visible = false;
 					model.getObjectByName( 'wheels'+lastNumb ).visible = false;
 					
