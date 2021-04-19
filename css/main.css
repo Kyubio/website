@@ -1,0 +1,189 @@
+/*fonts*/
+@font-face {
+    font-family: 'Montserrat';
+    src: url('http://localhost/Sogeti/css/fonts/Montserrat-Regular.ttf');http://localhost/Sogeti/
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aquire';
+    src: url('http://localhost/Sogeti/css/fonts/AquireBold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body
+{
+	font-family: Montserrat;
+	margin: 0px;
+	background-color: #FDFDFD;
+}
+
+h1
+{
+	font-family: Aquire;
+	font-size: 130px;
+	margin: 0px;
+}
+
+h2
+{
+	font-family: Montserrat;
+	font-size: 53px;
+	margin: 10px 0;
+	color: #43b1d6;
+}
+
+img
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+header
+{
+	width: 80%;
+	margin: 50px auto;
+	display: block;
+}
+
+
+.buy
+{
+	border: none;
+	outline: none;
+	color: white;
+	background-color: #43B1D6;
+	border-radius: 15px;
+	width: 160px;
+	height: 65px;
+	margin-left: 50px;
+}
+
+.logo
+{
+	display: inline;
+}
+
+.header-right
+{
+	display: inline;
+	float: right;
+}
+
+.create
+{
+	border: none;
+	outline: none;
+	color: white;
+	background-color: #43B1D6;
+	border-radius: 15px;
+	width: 300px;
+	height: 65px;
+	margin: 50px 0 180px 0; 
+}
+
+.fa-shopping-bag, .fa-smile
+{ 
+	margin-right: 10px;
+}
+
+.intro
+{
+	width: 65%;
+	margin: auto;
+	display: block;
+	position: relative;
+}
+
+.pic-row
+{
+	display: inline;
+}
+
+.pic-row img
+{
+	width: 100%;
+}
+
+footer
+{
+	margin: 200px 0 0 0;
+	padding: 70px;
+	background: linear-gradient(180deg, rgba(253,253,253,1) 0%, rgba(237,237,237,1) 100%);
+	display: block;
+	height: 40px;
+	font-size: 18px;
+}
+
+.l-footer
+{
+	display: inline;
+}
+
+.l-footer a
+{
+	color: #4EC7EB;
+	text-decoration: none;
+	margin-left: 43px;
+}
+
+.r-footer
+{
+	display: inline;
+	float: right;
+}
+
+.social
+{
+	color: #4EC7EB;
+	margin: 0 36px;
+}
+
+.fa-instagram
+{
+	margin: 0 36px 0 92px;
+}
+
+.social-icons
+{
+	display: inline;
+	font-size: 38px;
+	position: relative;
+	bottom: 10px;
+}
+
+.flw
+{
+	display: inline;
+	vertical-align: center;
+	position: relative;
+	bottom: 20px;
+}
+
+.fa-check-circle
+{
+	color: #34C759;
+	font-size: 130px;
+}
+
+.thx-message
+{
+	width: 65%;
+	margin: auto;
+	display: block;
+	position: relative;
+}
