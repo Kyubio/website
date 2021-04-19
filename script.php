@@ -69,6 +69,7 @@
 			const model = gltf.scene;
 			model.scale.set( 0.25, 0.25, 0.25 ); //size of the cube
 			
+			
 			//material colors
 			model.getObjectByName( 'Cube' ).material = mainMaterial;
 			

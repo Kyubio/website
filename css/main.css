@@ -13,86 +13,177 @@
     font-style: normal;
 }
 
-html,body
+html, body
 {
-	margin: 0;
-	background-color: #4ec7eb;
 	font-family: Montserrat;
-	color: white;
+	margin: 0px;
+	background-color: #FDFDFD;
 }
 
 h1
 {
 	font-family: Aquire;
-	text-align: center;
-	margin-top: 0;
+	font-size: 130px;
+	margin: 0px;
 }
 
-h3
+h2
 {
-	font-family: Aquire;
-	font-size: 130%;
-	text-align: center;
+	font-family: Montserrat;
+	font-size: 53px;
+	margin: 10px 0;
+	color: #43b1d6;
 }
 
-.builder
+img
 {
-	position: absolute;
-	right: 25px;
-	top: 25px;
-	width: 350px;
-	padding: 25px 0;
-	border: 2px solid #43B1D6;
-	background-color: #43B1D6;
-	border-radius: 5px;
+	padding: 0px;
+	margin: 0px;
 }
 
-.area
-{
-	width:75%;
-	margin: auto;
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.colors
-{
-	width: 100%;
-	margin: auto;
-}
-
-.colorSelector
-{
-	display: inline-block;
-	margin: 0 10px;
-	color: white;
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 
-hr
+header
 {
-	border: 3px solid white;
-	border-radius: 50px;
-	width: 100%;
-	margin: 15px auto;
+	width: 80%;
+	margin: 50px auto;
+	display: block;
 }
 
-label
-{
-	color: white;
-	margin-left: 10px;
-}
 
-.select-item
+.buy
 {
-	margin: 10px 50px 10px 0;
-	
-}
-
-select
-{
-	float: right;
-	border: 1px solid black;
-	border-radius: 5px;
+	border: none;
 	outline: none;
+	color: white;
+	background-color: #43B1D6;
+	border-radius: 15px;
+	width: 160px;
+	height: 65px;
+	margin-left: 50px;
 }
 
+.logo
+{
+	display: inline;
+}
 
+.header-right
+{
+	display: inline;
+	float: right;
+}
+
+.create
+{
+	border: none;
+	outline: none;
+	color: white;
+	background-color: #43B1D6;
+	border-radius: 15px;
+	width: 300px;
+	height: 65px;
+	margin: 50px 0 180px 0; 
+}
+
+.fa-shopping-bag, .fa-smile
+{ 
+	margin-right: 10px;
+}
+
+.intro
+{
+	width: 65%;
+	margin: auto;
+	display: block;
+	position: relative;
+}
+
+.pic-row
+{
+	display: inline;
+}
+
+.pic-row img
+{
+	width: 100%;
+}
+
+footer
+{
+	margin: 200px 0 0 0;
+	padding: 70px;
+	background: linear-gradient(180deg, rgba(253,253,253,1) 0%, rgba(237,237,237,1) 100%);
+	display: block;
+	height: 40px;
+	font-size: 18px;
+}
+
+.l-footer
+{
+	display: inline;
+}
+
+.l-footer a
+{
+	color: #4EC7EB;
+	text-decoration: none;
+	margin-left: 43px;
+}
+
+.r-footer
+{
+	display: inline;
+	float: right;
+}
+
+.social
+{
+	color: #4EC7EB;
+	margin: 0 36px;
+}
+
+.fa-instagram
+{
+	margin: 0 36px 0 92px;
+}
+
+.social-icons
+{
+	display: inline;
+	font-size: 38px;
+	position: relative;
+	bottom: 10px;
+}
+
+.flw
+{
+	display: inline;
+	vertical-align: center;
+	position: relative;
+	bottom: 20px;
+}
+
+.fa-check-circle
+{
+	color: #34C759;
+	font-size: 130px;
+}
+
+.thx-message
+{
+	width: 65%;
+	margin: auto;
+	display: block;
+	position: relative;
+}
