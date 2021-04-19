@@ -1,7 +1,10 @@
 name: Deploy webshop
 
 on:
-  push:
+  push: 
+    branches:
+      [ master ]
+      
   workflow_dispatch:
   
 jobs:
@@ -18,7 +21,7 @@ jobs:
         server: hera.fhict.nl
         username: i441891
         password: ${{ secrets.hera_password }}
-        server-dir: /domains/kyubio.i441891.hera.fhict.nl/public_html/
+        server-dir: /domains/kyubio.i441891.hera.fhict.nl/public_html/webshop/
         exclude: .git*
           - .git*/**
           - README.md
