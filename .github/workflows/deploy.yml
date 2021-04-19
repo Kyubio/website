@@ -1,0 +1,24 @@
+name: Deploy webshop
+
+on:
+  push:
+  workflow_dispatch:
+  
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v2.3.2
+    
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: hera.fhict.nl
+        username: i441891
+        password: ${{ secrets.hera_password }}
+        server-dir: /domains/kyubio.i441891.hera.fhict.nl/public_html/
+        exclude: .git*
+          - .git*/**
+          - README.md
